@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{%  block title %}
+    Calories Form
+{% endblock title %}
+
+{%  block body %}
+<h1>The Calories Form</h1>
+<p>Fill in the form and click the button to get the results</p>
+<form action="/calories_form" method="post">
+    {{ calorie.weight.label }} {{ calorie.weight }}
+    <br>
+    {{ calorie.height.label }} {{ calorie.height }}
+    <br>
+    {{ calorie.age.label }} {{ calorie.age }}
+    <hr>
+    <p>Location Data:</p>
+    {{ location.country.label }} {{ location.country }}
+    <br>
+    {{ location.city.label }} {{ location.city }}
+    <hr>
+    {{ calorie.button }}
+    <hr>
+    {% if submit %}
+        Temperature: {{ temperature }}
+        Calories: {{ calories }}
+    {% endif %}
+</form>
+{% endblock body %}
+
+
+
+
